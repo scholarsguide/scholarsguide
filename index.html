@@ -1,30 +1,56 @@
 <html>
-
 <head>
-    <title>Home</title>
+    <title>Home | Scholar's Guide</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script         src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-</head>
-
-<body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <div class="parallax" style="background-image: url(bannerbg.jpg);">
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script src="login.js"></script>
+    <script src="firebaseAPI.js"></script>
+    <script src="sidenav.js"></script>
+</head>
+<body>
+    <div class="float:left">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div>
+            <div>
+                <div style="padding:50px 50px;">
+                    <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+                    <input style="background-color:#111111;border:0px;font-size:16px;color:#EEEEEE;border-bottom:0.5px solid white;" type="text" id="email" name="email" placeholder="Email"/><br>
+                    <input style="background-color:#111111;border:0px;font-size:16px;color:#EEEEEE;border-bottom:0.5px solid white;"  type="password" id="password" name="password" placeholder="Password"/>
+                    <br><br>
+                    <button style="background-color:#111111;border:0px;font-size:16px;color:#EEEEEE;"  id="quickstart-sign-in" name="signin" class="myButton">Sign In</button>
+                    <button style="background-color:#111111;border:0px;font-size:16px;color:#EEEEEE;"  id="quickstart-sign-up" name="signup">Sign Up</button>
+                    <button style="background-color:#111111;border:0px;font-size:16px;color:#EEEEEE;" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
+                    <div class="quickstart-user-details-container"><br>
+                    Sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<div id="main">
+  <div class="banner" style="background-image: url(bannerbg.jpg);" onclick="openNav()">
         <div class="content">
-            <span class="border"> HOME </span>
+            <span class="border">HOME</span>
         </div>
     </div>
     <div align="center" style="color: #777;background-color:white;text-align:center;padding:50px 25%;text-align: justify; width:50%;align-self:center;">
-        <h3 style="text-align:center;">Welcome</h3>
-        <p align="center">The Scholars' Guide is an initiative by the current IB Year 1 students to provide IGCSE Students with a plethora of academic resources, as well as a platform to communicate with other students. </p>
+        <h3 style="text-align:center;">WELCOME</h3>
+        <p align="center">The Scholars' Guide is an initiative by the current IB Year 1 students to provide IGCSE Students with a plethora of academic resources, as well as a platform to communicate with other students.</p>
     </div>
-    <div class="parallax" style="background-image: url(bannerbg2.jpg); height: 50%" onmouseover="this.style.opacity= 0.95;" onmouseout="this.style.opacity=1;" id="button" onclick="$('#wrapper').toggleClass('open').slideToggle(200);">
+    <div class="banner" style="background-image: url(bannerbg2.jpg); height: 50%" onmouseover="this.style.opacity= 0.95;" onmouseout="this.style.opacity=1;">
         <div class="content">
-            <span class="border"> OUR TEAM </span>
-            
+            <span class="border">SERVICES</span>
         </div>
     </div>
-    <div id="wrapper" class="open" style="color: #777;background-color:white;text-align:center;padding:50px 25%;text-align: justify; width:60%;align-self:center;columns:20% 3;-webkit-columns: 20% 3;">
+    <div class="banner" style="background-image: url(bannerbg3.jpg); height: 50%;" onmouseover="this.style.opacity= 0.95;" onmouseout="this.style.opacity=1;" onclick="$('#wrapper2').toggleClass('open').slideToggle(200);">
+        <div class="content">
+            <span class="border">OUR TEAM</span>
+        </div>
+    </div>
+      <div id="wrapper2" class="open" style="color: #777;background-color:white;text-align:center;padding:50px 25%;text-align: justify; width:60%;align-self:center;">
         <h3>Literature</h3>
                 <ul>
                     <li>Swetha</li>
@@ -39,8 +65,8 @@
                 </ul>
         <h3>Second Languages</h3>
                <ul>
-                    <li>Asmita (Hindi)</li>
-                    <li>Akshara (Tamil)</li>
+                   <li>Asmita (Hindi)</li>
+                   <li>Akshara (Tamil)</li>
                    <li>Vidyabharati (Tamil)</li>
                    <li>Dhivya (French)</li>
                    <li>Abhiman (French)</li>
@@ -71,16 +97,11 @@
                     <li>Swetha</li>
                 </ul>
             </div>
-    <div class="parallax" style="background-image: url(bannerbg3.jpg); height: 50%;" onmouseover="this.style.opacity= 0.95;" onmouseout="this.style.opacity=1;">
-        <div class="content">
-            <span class="border">TEST 3</span>
-        </div>
-    </div>
     <div style="position:relative;">
         <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;">
             <p>"Education is the movement from darkness to light." - Allan Bloom</p>
         </div>
     </div>
+</div>
 </body>
-
 </html>
