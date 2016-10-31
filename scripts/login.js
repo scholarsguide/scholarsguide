@@ -23,10 +23,8 @@ function toggleSignIn() {
                 alert(errorMessage);
             }
             console.log(error);
-            document.getElementById('quickstart-sign-in').disabled = false;
         });
     }
-    document.getElementById('quickstart-sign-in').disabled = true;
 }
 
 function handleSignUp() {
@@ -78,7 +76,6 @@ function sendPasswordReset() {
 
 function initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
-        document.getElementById('quickstart-verify-email').disabled = true;
         if (user) {
             var displayName = user.displayName;
             var email = user.email;
@@ -87,24 +84,19 @@ function initApp() {
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-            document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-            if (!emailVerified) {
-                document.getElementById('quickstart-verify-email').disabled = false;
-            }
+            document.getElementById('signinstatus').textContent = 'Signed in';
+            document.getElementById('signin').textContent = 'SIGN OUT';
+            if (!emailVerified) {}
         }
         else {
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-            document.getElementById('quickstart-account-details').textContent = 'null';
+            document.getElementById('signinstatus').textContent = 'Signed out';
+            document.getElementById('signin').textContent = 'SIGN IN';
         }
-        document.getElementById('quickstart-sign-in').disabled = false;
     });
-    document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-    document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-    document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
-    document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
+    document.getElementById('signin').addEventListener('click', toggleSignIn, false);
+    document.getElementById('signup').addEventListener('click', handleSignUp, false);
+    document.getElementById('verifyemail').addEventListener('click', sendEmailVerification, false);
+    document.getElementById('resetpassword').addEventListener('click', sendPasswordReset, false);
 }
 window.onload = function () {
     initApp();

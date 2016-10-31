@@ -95,3 +95,26 @@ h3 {
     transition: 0s;
     float: left;
 }
+.loginButton {
+    background-color: #222;
+    border: none;
+    color: #aaa;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 12px "Lato", sans-serif;
+}
+.loginInput {
+    background-color: #111;
+    color: #aaa;
+    display:inline;
+    width:auto;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom:1px solid white;
+    border-right: 0px;
+    padding:10px 0px;
+    width:100%;
+    font: 14px "Lato", sans-serif;
+}
