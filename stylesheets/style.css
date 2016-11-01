@@ -45,6 +45,7 @@ h3 {
     overflow: hidden;
     display: none;
     display: none;
+    transition: 0;
 }
 
 .sidenav {
