@@ -19,17 +19,17 @@ function handleFileSelect(evt) {
     });
 }
 window.onload = function () {
-        document.getElementById('file').addEventListener('change', handleFileSelect, false);
-        document.getElementById('file').disabled = true;
-        auth.onAuthStateChanged(function (user) {
-                if (user) {
-                    console.log('Anonymous user signed-in.', user);
-                    document.getElementById('file').disabled = false;
-                    $('#bannerContent2').html($('#subjectList').html());
-                    }
-                    else {
-                        console.log('There was no anonymous session. Creating a new anonymous user.');
-                        auth.signInAnonymously();
-                    }
-                });
+    document.getElementById('file').addEventListener('change', handleFileSelect, false);
+    document.getElementById('file').disabled = true;
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            console.log('Anonymous user signed-in.', user);
+            document.getElementById('file').disabled = false;
+            $('#bannerContent2').html($('#subjectList').html());
         }
+        else {
+            console.log('There was no anonymous session. Creating a new anonymous user.');
+            auth.signInAnonymously();
+        }
+    });
+}
